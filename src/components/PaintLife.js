@@ -2,26 +2,24 @@ import React from 'react';
 import axios from 'axios';
 import { PaintingsCategorie } from './PaintingsCategorie';
 
-export class PaintLandscape extends React.Component {
+export class PaintLife extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			landscapeData: []
+			lifeData: []
 		};
 	}
 
 	componentDidMount() {
-		axios.get('/paint-landscape')
+		axios.get('/paint-everyday-life')
 		.then((res) => this.setState({
-			landscapeData: res.data.landscapeData
+			lifeData: res.data.lifeData
 
 		}))
 	}
 	render() {
 		return (
-			<PaintingsCategorie categorieData={this.state.landscapeData} />
+			<PaintingsCategorie categorieData={this.state.lifeData} />
 		)
 	}
 }
-
-// categorie={this.state.landscapeData[0].categorie}

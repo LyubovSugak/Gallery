@@ -9,3 +9,19 @@ body {
 .paintings-menu, .photography-menu {
 	display: flex;
 }
+.row {
+	display: flex;
+}
+.author-data-container {
+
+}
+.author-data-container img {
+	width: 100px;
+	height: 100px;
+	border-radius: 50%;
+	object-fit: cover;
+}
+/*.paints-slider img {
+	width: 200px;
+	height: 200px;
+}*/

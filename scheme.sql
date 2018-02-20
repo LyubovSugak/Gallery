@@ -9,6 +9,8 @@ CREATE TABLE paintings (
   categorie VARCHAR(30),
   technique VARCHAR(30),
   image TEXT,
+  x INTEGER,
+  y INTEGER,
   created TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
@@ -26,6 +28,8 @@ CREATE TABLE handcrafts (
   author_id INTEGER,
   categorie VARCHAR(30),
   image TEXT,
+  x INTEGER,
+  y INTEGER,
   created TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
@@ -43,10 +47,11 @@ CREATE TABLE authors (
 );
 
 
-INSERT INTO paintings (author_id, categorie, technique, image) VALUES (1, 'landscape', 'oil', '2.jpg');
-INSERT INTO paintings (author_id, categorie, technique, image) VALUES (2, 'landscape', 'whatecolor-pencil', '18.jpg');
+INSERT INTO paintings (author_id, categorie, technique, image, x, y) VALUES (2, 'Landscape', 'Oil', '2.JPG', 40, 30);
+INSERT INTO paintings (author_id, categorie, technique, image, x, y) VALUES (1, 'Still Life', 'Oil', '1.JPG', 40, 35);
 INSERT INTO authors (author_image, first, last) VALUES ('lana.jpg', 'Lana', 'Nakene');
-INSERT INTO authors (author_image, first, last) VALUES ('lyuba.jpg.jpg', 'Lyuba', 'Sugak');
+INSERT INTO authors (author_image, first, last) VALUES ('lyuba.jpg', 'Lyuba', 'Sugak');
+INSERT INTO authors (author_image, first, last) VALUES ('evgenia.jpg', 'Evgeniya', 'Izotova');
 
 ALTER TABLE authors CHANGE COLUMN image author_image;
 
@@ -68,7 +73,7 @@ SELECT users.first AS user_first, users.last AS user_last,
 
 INSERT INTO friend_request (sender_id, recipient_id, status) VALUES (4, 9, 2);
 
-DELETE FROM paintings WHERE id = 2;
+DELETE FROM paintings WHERE id = 11;
 
 const PENDING = 1, ACCEPTED = 2;
 
@@ -80,6 +85,17 @@ const q = `
     OR (status = ${ACCEPTED} AND recipient_id = $1 AND requester_id = users.id)
     OR (status = ${ACCEPTED} AND requester_id = $1 AND recipient_id = users.id)
 `;
+
+INSERT INTO paintings (author_id, categorie, technique, image, x, y) VALUES (3, 'Everyday Life', 'Mix', 'ev4.jpg', 21, 23);
+INSERT INTO paintings (author_id, categorie, technique, image, x, y) VALUES (3, 'Everyday Life', 'Mix', 'ev5.jpg', 21, 23);
+INSERT INTO paintings (author_id, categorie, technique, image, x, y) VALUES (3, 'Everyday Life', 'Mix', 'ev6.jpg', 21, 23);
+INSERT INTO paintings (author_id, categorie, technique, image, x, y) VALUES (2, 'Still Life', 'Watercolor', '12.JPG', 35, 25);
+INSERT INTO paintings (author_id, categorie, technique, image, x, y) VALUES (2, 'Still Life', 'Watercolor', '13.JPG', 35, 25);
+INSERT INTO paintings (author_id, categorie, technique, image, x, y) VALUES (2, 'Still Life', 'Watercolor', '14.JPG', 35, 25);
+INSERT INTO paintings (author_id, categorie, technique, image, x, y) VALUES (2, 'Still Life', 'Watercolor', '15.JPG', 35, 25);
+
+INSERT INTO paintings (author_id, categorie, technique, image, x, y) VALUES (2, 'Landscape', 'Oil', '2.JPG', 40, 30);
+
 
 
 

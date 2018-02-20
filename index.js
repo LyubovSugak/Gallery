@@ -4,6 +4,7 @@ const host = config.s3Url;
 const uploader = require('./uploader.js').uploader;
 const passModule = require('./passModule.js');
 const db = require('./moduleDataBase.js');
+const dbQuery = require('./dbQuery.js')
 const express = require('express');
 const app = express();
 const server = require('http').Server(app);
@@ -49,31 +50,98 @@ app.get('/newest-works', function(req, res) {
 
 app.get('/paint-landscape', function(req,res) {
 	db.getLandscapeData()
-	.then((paintLandscapeData) => {
-		var  singleAuthor = {};
-		var authors = [];
-		var paintings = [];
-
-		paintLandscapeData.forEach(item => {
-			landscapePaintings.push(item.image)
-			landscapeData = {
-				authorImage: item.author_image,
-				first: item.first,
-				last: item.last,
-				listOfPaintings: landscapePaintings
-			}
+	.then((paintLandscape) => {
+		res.json({
+			landscapeData: dbQuery(paintLandscape)
 		})
-
-		console.log('LANDSCAPE', landscapeData)
 	})
 	.catch((err) => {
         console.log('app.get(/paint-landscape)', err.stack);
     }) 
 })
 
+app.get('/paint-still-life', function(req, res) {
+	console.log('INSIDE')
+	db.getStillLifeData()
+	.then((paintStillLife) => {
+		console.log('paintStillLife', paintStillLife)
+		res.json({
+			stillLifeData: dbQuery(paintStillLife)
+		})
+
+	})
+	.catch((err) => {
+        console.log('app.get(/paint-still-life)', err.stack);
+    }) 
+})
+app.get('/paint-everyday-life', function(req, res) {
+	db.getLifeData()
+	.then((paintLife) => {
+		console.log('paintStillLife', paintLife)
+		res.json({
+			lifeData: dbQuery(paintLife)
+		})
+	})
+	.catch((err) => {
+        console.log('app.get(/paint-still-life)', err.stack);
+    }) 
+})
+app.get('/paint-watercolor', function(req, res) {
+	db.getWatercolorData()
+	.then((paintWatercolor) => {
+		res.json({
+			watercolorData: dbQuery(paintWatercolor)
+		})
+	})
+	.catch((err) => {
+        console.log('app.get(/paint-watercolor)', err.stack);
+    }) 
+})
+app.get('/paint-oil', function(req, res) {
+	db.getOilData()
+	.then((paintOil) => {
+		res.json({
+			oilData: dbQuery(paintOil)
+		})
+	})
+	.catch((err) => {
+        console.log('app.get(/paint-oil)', err.stack);
+    }) 
+})
+app.get('/paint-water-pencil', function(req, res) {
+	db.getWaterPencilData()
+	.then((paintWaterPencil) => {
+		res.json({
+			waterPencil: dbQuery(paintWaterPencil)
+		})
+	})
+	.catch((err) => {
+        console.log('app.get(/paint-water-pencil)', err.stack);
+    }) 
+})
+app.get('/single-paint/:id', function(req, res) {
+	db.getSinglePaint(req.params.id)
+	.then((singlePaintData) => {
+		singlePaintData.image = host + singlePaintData.image;
+		singlePaintData.author_image = host + singlePaintData.author_image;
+		res.json({
+			singlePaint: singlePaintData
+		})
+	})
+	.catch((err) => {
+        console.log('app.get(/single-paint)', err.stack);
+    }) 
+})
+
+
+app.get('*', function(req, res) {
+    res.sendFile(__dirname + '/index.html');
+})
+
 server.listen(8080, function() {
     console.log("I'm listening.");
 });
+
 
 
 //  w W /

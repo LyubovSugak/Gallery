@@ -1,14 +1,17 @@
-var React = require('react');
+import React from 'react';
 import OwlCarousel from 'react-owl-carousel';
 
 export function Slider(props) {
   return (
     <OwlCarousel 
-    className="owl-theme"
-    loop margin={10} nav>
-        {props.children}
+   		className="owl-theme"
+    	margin={10} 
+    	nav>
+    	{props.children}
     </OwlCarousel>
   )
 }
 
 
+        // 
+// 
