@@ -122,6 +122,7 @@ app.get('/paint-water-pencil', function(req, res) {
 app.get('/single-paint/:id', function(req, res) {
 	db.getSinglePaint(req.params.id)
 	.then((singlePaintData) => {
+		// console.log('singlePaintData', singlePaintData)
 		singlePaintData.image = host + singlePaintData.image;
 		singlePaintData.author_image = host + singlePaintData.author_image;
 		res.json({

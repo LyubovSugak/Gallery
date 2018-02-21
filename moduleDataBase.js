@@ -13,8 +13,10 @@ function getNewestWorks() {
     })
 }
 function getLandscapeData() {
-	return db.query(`SELECT * FROM authors JOIN paintings 
-					ON author_id = authors.id WHERE categorie = 'Landscape'`)
+	return db.query(`SELECT author_id, first, last, author_image, 
+		categorie, technique, image, x, y, paintings.id 
+		FROM authors JOIN paintings ON author_id = authors.id 
+		WHERE categorie = 'Landscape'`)
 	.then((result) => {
 		return result.rows;
 	})
@@ -23,8 +25,10 @@ function getLandscapeData() {
     })					
 }
 function getLifeData() {
-	return db.query(`SELECT * FROM authors JOIN paintings 
-					ON author_id = authors.id WHERE categorie = 'Everyday Life'`)
+	return db.query(`SELECT author_id, first, last, author_image, 
+		categorie, technique, image, x, y, paintings.id 
+		FROM authors JOIN paintings ON author_id = authors.id 
+		WHERE categorie = 'Everyday Life'`)
 	.then((result) => {
 		return result.rows;
 	})
@@ -33,8 +37,10 @@ function getLifeData() {
     })
 }
 function getStillLifeData() {
-	return db.query(`SELECT * FROM authors JOIN paintings 
-					ON author_id = authors.id WHERE categorie = 'Still Life'`)
+	return db.query(`SELECT author_id, first, last, author_image, 
+		categorie, technique, image, x, y, paintings.id 
+		FROM authors JOIN paintings ON author_id = authors.id 
+		WHERE categorie = 'Still Life'`)
 	.then((result) => {
 		return result.rows;
 	})
@@ -43,8 +49,10 @@ function getStillLifeData() {
     })
 }
 function getOilData() {
-	return db.query(`SELECT * FROM authors JOIN paintings 
-					ON author_id = authors.id WHERE technique = 'Oil'`)
+	return db.query(`SELECT author_id, first, last, author_image, 
+		categorie, technique, image, x, y, paintings.id 
+		FROM authors JOIN paintings ON author_id = authors.id 
+		WHERE technique = 'Oil'`)
 	.then((result) => {
 		return result.rows;
 	})
@@ -53,8 +61,10 @@ function getOilData() {
     })
 }
 function getWatercolorData() {
-	return db.query(`SELECT * FROM authors JOIN paintings 
-					ON author_id = authors.id WHERE technique = 'Watercolor'`)
+	return db.query(`SELECT author_id, first, last, author_image, 
+		categorie, technique, image, x, y, paintings.id 
+		FROM authors JOIN paintings ON author_id = authors.id 
+		WHERE technique = 'Watercolor'`)
 	.then((result) => {
 		return result.rows;
 	})
@@ -63,8 +73,10 @@ function getWatercolorData() {
     })
 }
 function getWaterPencilData() {
-	return db.query(`SELECT * FROM authors JOIN paintings 
-					ON author_id = authors.id WHERE technique = 'Watercolor-pencil'`)
+	return db.query(`SELECT author_id, first, last, author_image, 
+			categorie, technique, image, x, y, paintings.id 
+			FROM authors JOIN paintings ON author_id = authors.id 
+			WHERE technique = 'Watercolor-pencil'`)
 	.then((result) => {
 		return result.rows;
 	})
@@ -73,8 +85,10 @@ function getWaterPencilData() {
     })
 }
 function getSinglePaint(id) {
-	return db.query(`SELECT * FROM authors JOIN paintings 
-					ON author_id = authors.id WHERE paintings.id = $1`, [id])
+	return db.query(`SELECT author_id, first, last, author_image, 
+		categorie, technique, image, x, y, paintings.id 
+		FROM authors JOIN paintings ON author_id = authors.id 
+		WHERE paintings.id = $1`, [id])
 	.then((result) => {
 		return result.rows[0];
 	})
@@ -94,5 +108,13 @@ exports.getSinglePaint = getSinglePaint;
 
 
 //  w W /
-
-// SELECT * FROM authors JOIN paintings ON author_id = authors.id WHERE paintings.id = 2;
+// id: item.id
+// author_id: item.author_id,
+// first: item.first,
+// last: item.last,
+// authorImage: authorImage,
+// categorie: item.categorie,
+// technique: item.technique,
+// images: []
+// SELECT  FROM authors JOIN paintings ON author_id = authors.id WHERE paintings.id = 1;
+// SELECT author_id, first, last, author_image, categorie, technique, image, paintings.id FROM authors JOIN paintings ON author_id = authors.id WHERE paintings.id = 1;

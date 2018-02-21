@@ -8,17 +8,21 @@ module.exports = function dbQuery(list) {
 		if (!dataByAuthorId[item.author_id]) {
 			var authorImage = host + item.author_image;
 			dataByAuthorId[item.author_id] = {
-				id: item.author_id,
+				id: item.id,
+				authorId: item.author_id,
 				first: item.first,
 				last: item.last,
 				authorImage: authorImage,
 				categorie: item.categorie,
 				technique: item.technique,
+				x: item.x,
+				y: item.y,
 				images: []
 			}
 		}
 		var image = host + item.image;
 		dataByAuthorId[item.author_id].images.push({
+			id: item.id,
 			image: image
 		})	
 	})

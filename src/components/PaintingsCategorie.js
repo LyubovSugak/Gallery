@@ -1,5 +1,6 @@
 import React from 'react';
 import { Slider } from './Slider';
+import { LinkToSingleImg } from './LinkToSingleImg';
 
 export function PaintingsCategorie(props) {
 	// console.log('INSIDE PaintingsCategorie')
@@ -22,7 +23,13 @@ export function PaintingsCategorie(props) {
 								<p>{item.first} {item.last}</p>
 							</div>
 								<Slider>
-									{renderImages(item.images)}
+									{item.images.map(img => {
+										return (
+											<div className="paints-slider" key={img.image}>
+												<LinkToSingleImg item={item} img={img} />
+											</div>
+										)
+									})}
 								</Slider>
 						</div>
 					</div>
@@ -32,19 +39,12 @@ export function PaintingsCategorie(props) {
 	)	
 }
 
-function renderImages(imgArray) {
-	return imgArray.map(img => {
-		return (
-			<div className="paints-slider" key={img.image}>
-				<img src={img.image}  />
-			</div>
-		)
-	})
-}
-// {item.images.map(img => {
-// 									return (
-// 										<div className="paints-slider" key={img.image}>
-// 											<img src={img.image}  />
-// 										</div>
-// 									)
-// 								})}		
+// function renderImages(imgArray) {
+// 	return imgArray.map(img => {
+// 		return (
+// 			<div className="paints-slider" key={img.image}>
+// 				<img src={img.image}  />
+// 			</div>
+// 		)
+// 	})
+// }

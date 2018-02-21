@@ -25,7 +25,7 @@ export function PaintingsTechnique(props) {
 								{item.images.map(img => {
 									return (
 										<div className="paints-slider" key={img.image}>
-											<LinkToSingleImg item={item} img={img} />
+											<LinkToSingleImg img={img} />
 										</div>
 									)
 								})}

@@ -21,7 +21,97 @@ body {
 	border-radius: 50%;
 	object-fit: cover;
 }
-/*.paints-slider img {
-	width: 200px;
-	height: 200px;
-}*/
+.single-paint-container {
+	padding-left: 30px;
+	display: flex;
+}
+
+.single-paint-img {
+	width: 600px;
+	height: 470px;
+	border: 2px solid black;	
+}
+.brown {
+	border-color: brown;
+}
+.black {
+	border-color: black;
+}
+.beige {
+	border-color: #e6d8cf;
+}
+.pink {
+	border-color: pink;
+}
+.width-75 {
+	border-width: 10px;
+}
+.width-1 {
+	border-width: 15px;
+}
+.width-25 {
+	border-width: 20px;
+}
+#big-img {
+	width: 500px;
+	height: 468px;
+	object-fit: contain;
+	padding-left: 50px;
+}
+.interio-1, .interio-2 {
+	width: 350px;
+	height: 300px;
+	margin-top: 30px;
+}
+.interio-1-2-img {
+	width: 109px;
+    height: auto;
+    position: absolute;
+    left: 121px;
+    top: 70px;
+    border: 5px solid #161616;
+}
+.interio-1-2-img img {
+	width: 109px;
+	height: 76px;
+	object-fit: cover;
+}
+.frame-menu-container {
+	display: flex;
+	flex-direction: column;
+}
+.colors-of-frame, .width-of-frame {
+	display: flex;
+}
+
+.black-button {
+	width: 50px;
+    height: 50px;
+    background-color: black;
+}
+.brown-button {
+	width: 50px;
+    height: 50px;
+    background-color: brown;
+}
+.beige-button {
+	width: 50px;
+    height: 50px;
+    background-color: #e6d8cf;
+}
+.pink-button {
+	width: 50px;
+    height: 50px;
+    background-color: pink;
+}
+
+.width-scail {
+	width: 50px;
+    height: 35px;
+    border: 1px solid #eee;
+    /*display: inline-block;*/
+    margin-left: : 5px;
+    /*margin-right: 0px;*/
+    border-radius: 3px;
+    text-align: center;
+}

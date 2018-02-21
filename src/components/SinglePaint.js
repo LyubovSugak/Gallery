@@ -1,12 +1,17 @@
 import React from 'react';
 import axios from 'axios';
+import OwlCarousel from 'react-owl-carousel';
+import { LinkToFrame } from './LinkToFrame';
 
 export class SinglePaint extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			singlePaint: {}
+			singlePaint: {},
+			color: ''
 		};
+		this.changeFrameColor = this.changeFrameColor.bind(this);
+		this.changeFrameWidth = this.changeFrameWidth.bind(this);
 	}
 	componentDidMount() {
 		axios.get('/single-paint/' + this.props.match.params.id)
@@ -16,15 +21,61 @@ export class SinglePaint extends React.Component {
 			})
 		})
 	}
+	changeFrameColor(color) {
+		this.setState({
+			color: color
+		})
+	}
+	changeFrameWidth(width) {
+		this.setState({
+			width: width
+		})
+	}
 
 	render() {
+		var  styleInterioFirst = {
+			backgroundImage: `url("https://s3.amazonaws.com/imageboard-lyuba/showcase2.f2ffacc5.jpg")`, 
+			backgroundSize: 'cover'
+		}
+		var  styleInterioSecond = {
+			backgroundImage: `url("https://s3.amazonaws.com/imageboard-lyuba/showcase5.09582738.jpg")`, 
+			backgroundSize: 'cover'
+		}
+		// var className = this.state.color
+		// if (className == 'brown') {
+
+		// }
+
 		return (
-			<div>
-				<img src={this.state.singlePaint.image} />
-				<p>Dimensions: {this.state.singlePaint.y}cm {this.state.singlePaint.x}cm</p>
+			<div className="single-paint-container">
+				<div className={"single-paint-img " + this.state.color + ' ' + this.state.width}>
+					<img id="big-img" src={this.state.singlePaint.image} />
+					<OwlCarousel 
+				   		className="owl-theme"
+				    	margin={10}
+				    	items={2} 
+				    	nav
+				    	>
+				    	<div className="interio-1" style={styleInterioFirst}>
+				    		<div className="interio-1-2-img"><img src={this.state.singlePaint.image} /></div>
+				    	</div>
+				    	<div className="interio-2" style={styleInterioSecond}>
+				    		<div className="interio-1-2-img"><img src={this.state.singlePaint.image} /></div>
+				    	</div>
+				    </OwlCarousel>
+				</div>
+				<div>
+					<p>Dimensions: {this.state.singlePaint.y} cm {this.state.singlePaint.x} cm</p>
+					<LinkToFrame changeFrameColor={color => this.changeFrameColor(color)} 
+					changeFrameWidth={width => this.changeFrameWidth(width)} />
+				</div>
 
 			</div>
 
 		)
 	}
 }
+//  w W /
+
+// <LinkToFrame imgId={this.state.singlePaint.id} image={this.state.singlePaint.image}>
+// 						<div>Try Frame</div></LinkToFrame>
