@@ -23,7 +23,7 @@ export class LinkToFrame extends React.Component {
 	render() {
 		return (
 			<div>
-				{!this.state.isMenuVisible && <div onClick={this.showFrameMenu}>Try Frame</div>}
+				{!this.state.isMenuVisible && <div onClick={this.showFrameMenu} className="open-button-frame"><p>Try Frame</p></div>}
 				{this.state.isMenuVisible && 
 					<div className="frame-menu-container">
 						<p>Frame Color</p>
@@ -39,7 +39,7 @@ export class LinkToFrame extends React.Component {
 							<div className="width-scail" onClick={() => this.props.changeFrameWidth('width-1')}>1"</div>
 							<div className="width-scail" onClick={() => this.props.changeFrameWidth('width-25')}>1.25"</div>
 						</div>
-						{this.state.isMenuVisible&& <div onClick={this.closeFrameMenu}>CLOSE</div>}
+						{this.state.isMenuVisible&& <div onClick={this.closeFrameMenu} className="close-button-frame"><p>CLOSE</p></div>}
 					</div>
 
 				}

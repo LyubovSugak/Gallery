@@ -12,11 +12,11 @@ export function PaintingsCategorie(props) {
 		)
 	}
 	return (
-		<div>
+		<div className="paint-categorie-container">
 			{props.categorieData.map(item => {
 				return (
 					<div key={item.id}>
-						<p>Selection of Painting | {item.categorie}</p>
+						<h3>Selection of Painting | {item.categorie}</h3>
 						<div className="row">
 							<div className="author-data-container">
 								<img src={item.authorImage} />

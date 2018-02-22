@@ -11,11 +11,11 @@ export function PaintingsTechnique(props) {
 		)
 	}
 	return (
-		<div>
+		<div className="paint-technique-container">
 			{props.techniqueData.map(item => {
 				return (
 					<div key={item.id}>
-						<p>Selection of Painting | {item.technique}</p>
+						<h3>Selection of Painting | {item.technique}</h3>
 						<div className="row">
 							<div className="author-data-container">
 								<img src={item.authorImage} />

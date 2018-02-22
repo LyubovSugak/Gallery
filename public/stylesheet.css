@@ -3,17 +3,146 @@ body {
 }
 
 #header {
+	position: fixed;
+	z-index: 2000;
+	top: 0;
+	width: 100%;
+	height: 110px;
+	background-color: #007CB4;
+	/*rgba(255, 202, 0, 1);*/
+}
+.mini-logo {
+	width: 80px;
+	height: 80px;
+	padding-left: 69px;
+	padding-top: 17px;
+}
+.mini-logo img {
+	width: 184px;
+	height: 60px;
+	object-fit: contain;
+}
+.header-content {
+	display: flex;
+}
+.header-menu {
+	display: flex;
+	align-items: center;
+	padding-left: 139px;
+}
+.header-menu img{
+	padding-left: 70px;
+}
+.header-menu p {
+	padding-left: 10px;
+	font-size: 34px;
+    line-height: 34px;
+    font-family: Helvetica;
+    color: white;
+    cursor: pointer;
+}
+.welcome-slider-row {
+	display: flex;
+}
+.welcome-slider {
+	border: 10px solid black;
+	padding: 15px;
+	box-shadow: 0px 0px 6px 6px #dccdcd inset;
+	width: 300px;
+
+}
+
+
+.paintings-menu, .photography-menu, .hancraft-menu {
 	display: flex;
 }
 
-.paintings-menu, .photography-menu {
-	display: flex;
+.paintings-menu, .photography-menu, .hancraft-menu {
+	position: fixed;
+	z-index: 1000;
+	margin-top: 190px;
+	background-color: rgba(0,0,0,.8);
+    width: 100%;
+    left: 0;
+    transform: translateY(-200%);
+    /*rgba(255, 202, 0, 0.7);*/
+}
+.menu-transition {
+	transition: all .3s ease .15s;
+	transform: translateY(0);
+
+}
+.paintings-menu img, .photography-menu img, .hancraft-menu img {
+	width: 255px;
+	height: 255px;
+	object-fit: cover;
+	/*margin-right: 200px;*/
+}
+.paintings-menu h3, .photography-menu h3, .hancraft-menu h3 {
+	color: black;
+	font-size: 24px;
+    line-height: 24px;
+    font-family: Helvetica;
+    text-decoration: none;
+    color: white;
+}
+.paintings-menu p, .photography-menu p, .hancraft-menu p {
+	color: black;
+	font-size: 18px;
+    line-height: 18px;
+    font-family: Helvetica;
+    padding-left: 0;
+    transition: all 0.4s ease;
+    width: 200px;
+    margin: 15px;
+    color: white;
+}
+.paintings-menu p:hover {
+	font-size: 25px;
+	color: #21dadc;
+}
+.photography-menu p:hover {
+	font-size: 25px;
+	color: #21dadc;
+
+}
+.hancraft-menu p:hover {
+	font-size: 25px;
+	color: #21dadc;
+}
+.categorie-list, .technique-list, .genre-list, .style-list, .handcraft-categorie {
+	padding-left: 215px;
+}
+/* {
+	padding-left: 200px;
+}
+.style-list {
+	padding-left: 200px;
+}*/
+
+.background-image-logo {
+	padding-top: 120px;
+}
+.background-image-logo h1 {
+	font-size: 34px;
+    line-height: 34px;
+    font-family: Helvetica;
+    padding-left: 130px;
+}
+.paint-categorie-container, .paint-technique-container {
+	padding-top: 100px;
+	overflow: hidden;
+	background-image: url(https://s3.amazonaws.com/imageboard-lyuba/art_big.png);
+	/*opacity: 0.3;*/
+	background-size: contain;
 }
 .row {
 	display: flex;
+	padding-left: 35px;
 }
 .author-data-container {
-
+	width: 120px;
+	padding-right: 65px;
 }
 .author-data-container img {
 	width: 100px;
@@ -21,8 +150,25 @@ body {
 	border-radius: 50%;
 	object-fit: cover;
 }
+.paint-categorie-container h3, .paint-technique-container h3{
+	padding-left: 35px;
+	font-size: 34px;
+    line-height: 34px;
+    font-family: Helvetica;
+}
+.author-data-container p, .single-paint-description p{
+	font-size: 24px;
+    line-height: 24px;
+    font-family: Helvetica;
+}
+.paints-slider {
+	border: 6px solid black;
+	padding: 9px;
+	width: 270px;
+}
 .single-paint-container {
 	padding-left: 30px;
+	padding-top: 140px;
 	display: flex;
 }
 
@@ -32,7 +178,7 @@ body {
 	border: 2px solid black;	
 }
 .brown {
-	border-color: brown;
+	border-color: grey;
 }
 .black {
 	border-color: black;
@@ -41,7 +187,7 @@ body {
 	border-color: #e6d8cf;
 }
 .pink {
-	border-color: pink;
+	border-color: #e62a42;
 }
 .width-75 {
 	border-width: 10px;
@@ -52,13 +198,17 @@ body {
 .width-25 {
 	border-width: 20px;
 }
-#big-img {
+.single-paint-img {
+	box-shadow: 0px 0px 20px 11px #dccdcd inset;
+}
+.big-img-container {
 	width: 500px;
 	height: 468px;
 	object-fit: contain;
 	padding-left: 50px;
+	
 }
-.interio-1, .interio-2 {
+.interio-1, .interio-2, .interio-3 {
 	width: 350px;
 	height: 300px;
 	margin-top: 30px;
@@ -76,6 +226,9 @@ body {
 	height: 76px;
 	object-fit: cover;
 }
+.single-paint-description {
+	padding-left: 50px;
+}
 .frame-menu-container {
 	display: flex;
 	flex-direction: column;
@@ -88,30 +241,62 @@ body {
 	width: 50px;
     height: 50px;
     background-color: black;
+    margin-right: 5px;
 }
 .brown-button {
 	width: 50px;
     height: 50px;
-    background-color: brown;
+    background-color: grey;
+    margin-right: 5px;
 }
 .beige-button {
 	width: 50px;
     height: 50px;
     background-color: #e6d8cf;
+    margin-right: 5px;
 }
 .pink-button {
 	width: 50px;
     height: 50px;
-    background-color: pink;
+    background-color: #e62a42;
+    margin-right: 5px;
 }
 
 .width-scail {
 	width: 50px;
     height: 35px;
     border: 1px solid #eee;
-    /*display: inline-block;*/
+    background-color: #eee;
     margin-left: : 5px;
-    /*margin-right: 0px;*/
+    margin-right: 5px;
     border-radius: 3px;
     text-align: center;
+    padding-top: 13px;
+    cursor: pointer;
+}
+.open-button-frame {
+	width: 200px;
+    height: 35px;
+    border-radius: 5px;
+	margin-top: 20px;
+	background-color: rgba(255, 202, 0, 1);
+	text-align: center;
+	box-shadow: -3px 4px 16px 1px #dccdcd;
+	cursor: pointer;
+}
+.open-button-frame p, .close-button-frame p {
+	font-size: 18px;
+    font-family: Helvetica;
+    margin: 0;
+    padding-top: 6px;
+}
+.close-button-frame {
+	width: 111px;
+    height: 35px;
+    border-radius: 5px;
+	margin-top: 20px;
+	background-color: rgba(255, 202, 0, 1);
+	text-align: center;
+	box-shadow: -3px 4px 16px 1px #dccdcd;
+	cursor: pointer;
 }

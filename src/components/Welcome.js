@@ -1,6 +1,6 @@
 import React from 'react';
 import axios from 'axios';
-import { Slider } from './Slider';
+import OwlCarousel from 'react-owl-carousel';
 
 export class Welcome extends React.Component {
 	constructor(props) {
@@ -19,16 +19,21 @@ export class Welcome extends React.Component {
 			return null
 		}
 		return (
-			<div>
-				<img src="/static/abs.jpg" />
+			<div className="background-image-logo">
+				<img src="https://s3.amazonaws.com/imageboard-lyuba/big_logo.png" />
 				<h1>The newest works</h1>
-				<Slider>
-					{this.state.newImages.map(item => {
-						return (
-							<img src={item.image} key={item.image} />
-						)
-					})}
-				</Slider>
+					<div className="welcome-slider-row">
+						<OwlCarousel 
+						    className="owl-theme"
+						    loop margin={10} nav
+						>
+							{this.state.newImages.map(item => {
+								return (
+									<div className="welcome-slider" key={item.image}><img src={item.image} /></div>
+								)
+							})}
+						</OwlCarousel>
+					</div>
 			</div>
 		)
 	}
