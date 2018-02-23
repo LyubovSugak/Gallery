@@ -93,7 +93,19 @@ function getSinglePaint(id) {
 		return result.rows[0];
 	})
 	.catch((err) => {
-        console.log('getWaterPencilData function', err.stack);
+        console.log('getSinglePaint function', err.stack);
+    })
+}
+function getSingleAuthor(id) {
+	return db.query(`SELECT author_id, first, last, author_image, 
+		categorie, technique, image, x, y, paintings.id 
+		FROM authors JOIN paintings ON author_id = authors.id 
+		WHERE authors.id = $1`, [id])
+	.then((result) => {
+		return result.rows;
+	})
+	.catch((err) => {
+        console.log('getSingleAuthor function', err.stack);
     })
 }
 
@@ -105,6 +117,7 @@ exports.getStillLifeData = getStillLifeData;
 exports.getLifeData = getLifeData;
 exports.getOilData = getOilData;
 exports.getSinglePaint = getSinglePaint;
+exports.getSingleAuthor = getSingleAuthor;
 
 
 //  w W /
@@ -117,4 +130,4 @@ exports.getSinglePaint = getSinglePaint;
 // technique: item.technique,
 // images: []
 // SELECT  FROM authors JOIN paintings ON author_id = authors.id WHERE paintings.id = 1;
-// SELECT author_id, first, last, author_image, categorie, technique, image, paintings.id FROM authors JOIN paintings ON author_id = authors.id WHERE paintings.id = 1;
+// SELECT author_id, first, last, author_image, categorie, technique, image, paintings.id FROM authors JOIN paintings ON author_id = authors.id WHERE authors.id = 1;

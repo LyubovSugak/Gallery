@@ -1,6 +1,7 @@
 import React from 'react';
 import { Slider } from './Slider';
 import { LinkToSingleImg } from './LinkToSingleImg';
+import { LinkToSingleAuthor } from './LinkToSingleAuthor';
 
 export function PaintingsTechnique(props) {
 	if (props.techniqueData.length === 0) {
@@ -18,7 +19,8 @@ export function PaintingsTechnique(props) {
 						<h3>Selection of Painting | {item.technique}</h3>
 						<div className="row">
 							<div className="author-data-container">
-								<img src={item.authorImage} />
+							<LinkToSingleAuthor id={item.authorId} img={item.authorImage} />
+								
 								<p>{item.first} {item.last}</p>
 							</div>
 							<Slider>

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Slider } from './Slider';
 import { LinkToSingleImg } from './LinkToSingleImg';
+import { LinkToSingleAuthor } from './LinkToSingleAuthor';
 
 export function PaintingsCategorie(props) {
 	// console.log('INSIDE PaintingsCategorie')
@@ -19,7 +20,7 @@ export function PaintingsCategorie(props) {
 						<h3>Selection of Painting | {item.categorie}</h3>
 						<div className="row">
 							<div className="author-data-container">
-								<img src={item.authorImage} />
+								<LinkToSingleAuthor id={item.authorId} img={item.authorImage} />
 								<p>{item.first} {item.last}</p>
 							</div>
 								<Slider>

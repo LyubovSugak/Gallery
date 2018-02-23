@@ -59,7 +59,7 @@ export class Header extends React.Component {
 						<p onClick={this.showPainting}>Painting</p>
 						{this.state.isPaintingVisible && 
 							<div className="paintings-menu" ref={menu => this.menu = menu} onMouseLeave={this.onMouseLeaveHandler}>
-								<img src="https://s3.amazonaws.com/imageboard-lyuba/paint-menu.jpg" />
+								
 								<div className="categorie-list">
 									<h3>Painting Categories</h3>
 									<Link to="/paintings/categorie/landscape" style={{ textDecoration: 'none' }}><p>Landscape</p></Link>
@@ -79,7 +79,7 @@ export class Header extends React.Component {
 						<p onClick={this.showPhotography}>Photography</p>
 						{this.state.isPhotographyVisible && !this.state.isHandcraftVisible &&
 							<div className="photography-menu" ref={menu => this.menu = menu} onMouseLeave={this.onMouseLeaveHandler}>
-							<img src="https://s3.amazonaws.com/imageboard-lyuba/paint-menu.jpg" />
+							
 								<div className="genre-list">
 									<h3>Photography Genres</h3>
 									<Link to="/photos/genre/abstract" style={{ textDecoration: 'none' }}><p>Abstract</p></Link>
@@ -100,7 +100,7 @@ export class Header extends React.Component {
 						<p onClick={this.showHandcraft}>Handcraft</p>
 						{this.state.isHandcraftVisible && 
 							<div className="hancraft-menu" ref={menu => this.menu = menu} onMouseLeave={this.onMouseLeaveHandler}>
-								<img src="https://s3.amazonaws.com/imageboard-lyuba/paint-menu.jpg" />
+								
 								<div className="handcraft-categorie">
 									<h3>Handcraft Categories</h3>
 									<Link to="/handcrafts/categorie/new-year" style={{ textDecoration: 'none' }}><p>New Year</p></Link>
@@ -116,5 +116,5 @@ export class Header extends React.Component {
 	}
 }
 // <Link to="/photos/genre/potrait"><p>Potrait</p></Link>
-
+// <img src="https://s3.amazonaws.com/imageboard-lyuba/paint-menu.jpg" />
 //  w W /

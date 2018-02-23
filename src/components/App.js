@@ -1,7 +1,7 @@
 import React from 'react';
 import { Header } from './Header';
 import { Body } from './Body';
-// import { Footer } from './Footer';
+import { Footer } from './Footer';
 
 export class App extends React.Component {
 	constructor(props) {
@@ -14,7 +14,7 @@ export class App extends React.Component {
 			<div>
 				<Header />
 				<Body />
-				
+				<Footer />	
 			</div>
 		)
 	}

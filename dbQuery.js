@@ -29,5 +29,6 @@ module.exports = function dbQuery(list) {
 	for (var id in dataByAuthorId) {
 	    finalList.push(dataByAuthorId[id])
 	}
+	console.log('finalList', finalList)
 	return finalList;
 }

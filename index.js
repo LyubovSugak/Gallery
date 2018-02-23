@@ -134,6 +134,21 @@ app.get('/single-paint/:id', function(req, res) {
     }) 
 })
 
+app.get('/single-author/:id', function(req, res) {
+	db.getSingleAuthor(req.params.id)
+	.then((singleAuthorData) => {
+		
+		singleAuthorData.image = host + singleAuthorData.image;
+		singleAuthorData.author_image = host + singleAuthorData.author_image;
+		res.json({
+			singleAuthor: dbQuery(singleAuthorData)[0]
+		})
+	})
+	.catch((err) => {
+        console.log('app.get(/single-author)', err.stack);
+    }) 
+})
+
 
 app.get('*', function(req, res) {
     res.sendFile(__dirname + '/index.html');

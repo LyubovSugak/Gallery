@@ -51,9 +51,22 @@ export class SinglePaint extends React.Component {
 		// }
 
 		return (
-			<div className="single-paint-container">
-				<div className={"single-paint-img " + this.state.color + ' ' + this.state.width}>
-					<img className="big-img-container" src={this.state.singlePaint.image} />
+			<div>
+				<div className="single-paint-container">
+					<div className={"single-paint-img " + this.state.color + ' ' + this.state.width}>
+						<img className="big-img-container" src={this.state.singlePaint.image} />
+						
+
+					</div>
+					<div className="single-paint-description">
+						<p>Technique: {this.state.singlePaint.technique}</p>
+						<p>Dimensions: {this.state.singlePaint.y} cm {this.state.singlePaint.x} cm</p>
+						<LinkToFrame changeFrameColor={color => this.changeFrameColor(color)} 
+						changeFrameWidth={width => this.changeFrameWidth(width)} />
+					</div>
+
+				</div>
+				<div className="interio-carousel">
 					<OwlCarousel 
 					    className="owl-theme"
 					    loop margin={10} nav
@@ -78,17 +91,8 @@ export class SinglePaint extends React.Component {
 					    <div className="interio-3" style={styleInterioThird}>
 					    	<div className="interio-1-2-img"><img src={this.state.singlePaint.image} /></div>
 					    </div>
-					    
 					</OwlCarousel>
-
 				</div>
-				<div className="single-paint-description">
-					<p>Technique: {this.state.singlePaint.technique}</p>
-					<p>Dimensions: {this.state.singlePaint.y} cm {this.state.singlePaint.x} cm</p>
-					<LinkToFrame changeFrameColor={color => this.changeFrameColor(color)} 
-					changeFrameWidth={width => this.changeFrameWidth(width)} />
-				</div>
-
 			</div>
 
 		)

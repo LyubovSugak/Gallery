@@ -9,6 +9,7 @@ import { PaintLife } from './PaintLife';
 import { PaintOil } from './PaintOil';
 import { PaintWaterPencil } from './PaintWaterPencil';
 import { SinglePaint } from './SinglePaint';
+import { SingleAuthor } from './SingleAuthor';
 
 
 export function Body() {
@@ -22,6 +23,7 @@ export function Body() {
 			<Route path="/paintings/technique/watercolor" component={PaintWatercolor} />
 			<Route path="/paintings/technique/watercolor-pencil" component={PaintWaterPencil} />
 			<Route path="/item/:id" component={SinglePaint} />
+			<Route path="/author/:id" component={SingleAuthor} />
 		</div>
 	)
 }

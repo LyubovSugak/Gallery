@@ -51,8 +51,6 @@ body {
 	width: 300px;
 
 }
-
-
 .paintings-menu, .photography-menu, .hancraft-menu {
 	display: flex;
 }
@@ -130,9 +128,9 @@ body {
     padding-left: 130px;
 }
 .paint-categorie-container, .paint-technique-container {
-	padding-top: 100px;
+	padding-top: 156px;
 	overflow: hidden;
-	background-image: url(https://s3.amazonaws.com/imageboard-lyuba/art_big.png);
+	background-image: url(https://s3.amazonaws.com/imageboard-lyuba/art_big_25proc.png);
 	/*opacity: 0.3;*/
 	background-size: contain;
 }
@@ -299,4 +297,87 @@ body {
 	text-align: center;
 	box-shadow: -3px 4px 16px 1px #dccdcd;
 	cursor: pointer;
+}
+#footer {
+	display: flex;
+	/*justify-content: space-around;*/
+	height: 100px;
+	background-color: #007CB4;
+/*    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1050;*/
+}
+.soc-net-container {
+	padding-left: 35px;
+}
+.soc-net-pic {
+	display: inline-block;
+}
+.soc-net-pic img {
+	width: 35px;
+    height: 35px;
+    
+}
+.soc-net-container h3, .partners h3 {
+	font-family: Helvetica;
+	color: white;
+	margin: 5px;
+}
+.soc-net-container p, .partners p {
+	font-family: Helvetica;
+	color: white;
+}
+.partners {
+	padding-left: 200px;
+
+}
+.partners p {
+	margin: 10px;
+}
+.partners a {
+	color: white;
+}
+.single-author-container {
+	background-image: url(https://s3.amazonaws.com/imageboard-lyuba/art_big_25proc.png);
+	background-size: contain;
+	overflow: hidden;
+	height: 85vh;
+	
+}
+.container {
+	display: flex;
+	padding-top: 147px;
+	justify-content: flex-start;
+}
+.single-author-data {
+	padding-left: 35px;
+    padding-right: 20px;
+    padding-top: 35px;
+	
+}
+.single-author-img {
+	width: 150px;
+    height: 150px;
+    
+    
+}
+.single-author-img img {
+	width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+.single-author-data p {
+	font-size: 24px;
+	line-height: 24px;
+    font-family: Helvetica;
+    text-align: center;
+}
+
+.interio-carousel {
+	width: 400px;
+	padding-left: 35px;
 }
