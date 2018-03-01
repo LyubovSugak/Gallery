@@ -27,5 +27,5 @@ Click on the photo of author links to the page with all works exactly this autho
   ![Alt text](https://s3.amazonaws.com/imageboard-lyuba/g-7.png)![Alt text](https://s3.amazonaws.com/imageboard-lyuba/g-8.png)
   
 5. Clicking on the small-logo at the left corner get you back to the main page. 
-*all images are located on Amazon AWS.
+* all images are located on Amazon AWS.
 
