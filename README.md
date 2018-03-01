@@ -10,7 +10,7 @@ Belka-art is my final project. It is became a great opportunity to present art-w
 
 3. I chose Painting Categories – Landscape (in database I have two authors)
 ![Alt text](https://s3.amazonaws.com/imageboard-lyuba/g-3.png)
-and here – Technique watercolor, if there are a lot of works owl-carousel is ready to show all of them.
+  and here – Technique watercolor, if there are a lot of works owl-carousel is ready to show all of them.
 ![Alt text](https://s3.amazonaws.com/imageboard-lyuba/g-4.png)
 Click on the photo of author links to the page with all works exactly this author. 
 
