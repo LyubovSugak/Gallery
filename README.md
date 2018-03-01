@@ -1,9 +1,8 @@
 # Belka-art
 
-The `src` directory is where all of your client-side Javascript code should live. The file `src/start.js` is the entry point for your React application. All other files you use will either be imported by `start.js` or imported by files that are imported `start.js` (or imported by files that are imported by files that are imported by `start.js`, etc.).
+Belka-art is my final project. It is became a great opportunity to present art-works of mine and my friends. The most challenging part for me was to make correctly the structure of the application based on my knowledge of `React`. It helped me to understand better what is hidden behind the words MVC philosophy. My personal goal in this project was to work more with `React`, `PostgreSQL` and `CSS` to make it look like real on-line gallery. 
 
-To run your app in devlopment, you need to start two servers.
+1. On the main page we can choose one of the three category (Painting, Photography or Handcraft), then we see a big logo, on the bottom are presented new works (I used owl-carousel with infinity effect), on the footer – links to social-networks and portfolio of my partners – web designers.
+![Alt text](/home/lyuba/dev/description gallery/h1bEX_croper_ru.png)
 
-1. `bundle-server.js` - this server will listen on port 8081 and does nothing but compile the code in `src/start.js` and its dependencies into a single bundle which it serves from the url `/bundle.js`. It uses [`webpack-dev-middleware`](https://github.com/webpack/webpack-dev-middleware) to do this. This middleware keeps all the compiled files in memory and doesn't ever write a file to disk. Every time you edit one of the files in your bundle, it detects the change and automatically recompiles. Thus, you do not have to restart this process every time you make a change to one of your client-side Javascript files. After a change is saved, the updated `/bundle.js` will be available automatically.
-
-2. `index.js` - this server listens on port 8080 and it is where all your normal express stuff should go. When `index.js` is running in development, requests for `/bundle.js` will cause a request to be made to `http://localhost:8081/bundle.js` and the result served (it uses the [`http-proxy-middleware`](https://github.com/chimurai/http-proxy-middleware) to do this). You can restart this server every time you make a server-side change and not have to wait for `bundle.js` to recompile before you can test the change.
+2. 
